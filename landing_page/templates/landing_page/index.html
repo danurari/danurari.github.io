@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenXD Portfolio</title>
+    <meta name="description"
+        content="Portfolio of a DevOps and Cybersecurity enthusiast specializing in secure infrastructure and automation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="matrix-bg" id="matrixBg"></div>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">Zen<span class="highlight">XD</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">~/about</a></li>
+                    <li><a href="#skills">~/skills</a></li>
+                    <li><a href="#projects">~/projects</a></li>
+                    <li><a href="#contact">~/contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="greeting">Initialising connection...</p>
+                    <h1 class="glitch" data-text="sudo whoami">sudo whoami</h1>
+                    <h2 class="typing-text">Networking & Cybersec enthusiast<span class="cursor">_</span></h2>
+
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="btn close"></span>
+                            <span class="btn minimize"></span>
+                            <span class="btn maximize"></span>
+                            <div class="title">guest@portfolio:~</div>
+                        </div>
+                        <div class="terminal-body" id="terminal">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+
+                    <div class="cta-group">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Initiate Handshake</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <h2 class="section-title">~/about</h2>
+                <div class="glass-panel">
+                    <p>I’m a first-year college student majoring in Information Technology, focusing on cybersecurity
+                        and network security. I’ve always been fascinated by how systems connect and communicate and how
+                        they can be protected.
+                        I spend a lot of time homelabbing, running my own home server, and exploring new technologies.
+                        I’m curious and constantly motivated to understand how things work and sometimes how to make
+                        them work better.</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="content-section">
+                <h2 class="section-title">~/skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fa-brands fa-docker skill-icon"></i> Docker</div>
+                    <!-- <div class="skill-card"><i class="fa-brands fa-aws skill-icon"></i> AWS / Azure / GCP</div> -->
+                    <div class="skill-card"><i class="fa-brands fa-gitlab skill-icon"></i> CI/CD (Github actions)</div>
+                    <div class="skill-card"><i class="fa-brands fa-linux skill-icon"></i> Linux / Unix Admin</div>
+                    <div class="skill-card"><i class="fa-solid fa-network-wired skill-icon"></i> Network</div>
+                    <div class="skill-card"><i class="fa-brands fa-python skill-icon"></i> Python</div>
+                    <!-- <div class="skill-card"><i class="fa-solid fa-cubes skill-icon"></i> Terraform / Ansible</div> -->
+                    <!-- <div class="skill-card"><i class="fa-solid fa-user-secret skill-icon"></i> Penetration Testing</div> -->
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="content-section">
+                <h2 class="section-title">~/projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card glass-panel">
+                        <div class="project-img">
+                            <img src="{% static 'img/project_network.png' %}" alt="Secure Network Design">
+                        </div>
+                        <div class="project-info">
+                            <h3>Bookstorage Management Website</h3>
+                            <p>A website for managing book storage with Django and Postgresql. Using docker and docker
+                                compose for multi-container environment.</p>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card glass-panel">
+                        <div class="project-img">
+                            <div class="placeholder-img"><span>Container Security Framework</span></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Automated K8s Auditing</h3>
+                            <p>A custom tool to scan and secure Kubernetes clusters in real-time, enforcing security
+                                best practices and RBAC policies automatically.</p>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="content-section">
+                <h2 class="section-title">~/contact</h2>
+                <div class="glass-panel text-center">
+                    <p>Ready to secure your infrastructure? Leave a message.</p>
+                    <form class="contact-form" action="mailto:su1zennxd@gmail.com" method="POST" enctype="text/plain">
+                        <input type="text" name="name" placeholder="Name" class="form-input" required>
+                        <input type="email" name="email" placeholder="Email" class="form-input" required>
+                        <textarea name="message" placeholder="Message" rows="4" class="form-input" required></textarea>
+                        <button type="submit" class="btn-primary" style="margin-top: 1rem;">Send Transmission</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>zenxd. &copy; 2026. Built with Django & Docker.</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
