@@ -20,7 +20,7 @@
     <div class="container">
         <header>
             <nav>
-                <div class="logo">Zen<span class="highlight">XD</span></div>
+                <div class="logo">Danur<span class="highlight"> Ari</span></div>
                 <ul class="nav-links">
                     <li><a href="#about">~/about</a></li>
                     <li><a href="#skills">~/skills</a></li>
@@ -107,18 +107,30 @@
                 <h2 class="section-title">~/contact</h2>
                 <div class="glass-panel text-center">
                     <p>Interested? Leave a message.</p>
-                    <form class="contact-form" action="mailto:su1zennxd@gmail.com" method="POST" enctype="text/plain">
-                        <input type="text" name="name" placeholder="Name" class="form-input" required>
-                        <input type="email" name="email" placeholder="Email" class="form-input" required>
-                        <textarea name="message" placeholder="Message" rows="4" class="form-input" required></textarea>
-                        <button type="submit" class="btn-primary" style="margin-top: 1rem;">Send Transmission</button>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" name="name" id="contactName" placeholder="Name" class="form-input" required>
+                        <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-input" required>
+                        <textarea name="message" id="contactMessage" placeholder="Message" rows="4" class="form-input" required></textarea>
+                        <button type="submit" class="btn-primary" id="contactSubmit" style="margin-top: 1rem;">
+                            <span class="btn-text">Send Transmission</span>
+                        </button>
                     </form>
+                    <div class="form-status" id="formStatus"></div>
+                    <div class="contact-alt">
+                        <p class="contact-alt-text">Or reach me directly:</p>
+                        <div class="contact-links">
+                            <a href="mailto:su1zennxd@gmail.com" class="contact-link-item" title="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>su1zennxd@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>zenxd&copy; 2026. Built with Django & Docker.</p>
+            <p>Danur Ari&copy; 2026. Built with Django & Docker.</p>
         </footer>
     </div>
 

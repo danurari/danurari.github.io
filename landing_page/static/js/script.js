@@ -77,4 +77,47 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            const statusEl = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('contactSubmit');
+
+            // Validate
+            if (!name || !email || !message) {
+                statusEl.textContent = '⚠ Please fill in all fields.';
+                statusEl.className = 'form-status form-status-error';
+                return;
+            }
+
+            // Build mailto link with proper encoding
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+            const mailtoLink = `mailto:su1zennxd@gmail.com?subject=${subject}&body=${body}`;
+
+            // Visual feedback
+            submitBtn.classList.add('btn-sending');
+            submitBtn.querySelector('.btn-text').textContent = 'Opening mail client...';
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success after a short delay
+            setTimeout(() => {
+                statusEl.innerHTML = '<i class="fa-solid fa-check-circle"></i> Email client opened! If nothing happened, click the email link below.';
+                statusEl.className = 'form-status form-status-success';
+                submitBtn.classList.remove('btn-sending');
+                submitBtn.querySelector('.btn-text').textContent = 'Send Transmission';
+            }, 1000);
+        });
+    }
 });
